@@ -1,0 +1,149 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WebcamJS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/full.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+		  <a class="navbar-brand" href="#">Meme Engine</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="#">Home
+				  <span class="sr-only">(current)</span>
+				</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Services</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Contact</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+
+	  <br>
+	  <br>
+	  <br>
+	
+	<center><h1>Meme Engine</h1></center>
+	<center><p> Emotion Recognition Image Classifier to Your Favorite Giphy!</p></center>
+	
+	  <br>
+
+	<div class="center">
+	<center><h1>Pick Your Keyword</h1></center>
+		<!-- A button for taking snaps -->
+		<form id="keyword" action="/">
+
+				<center><input type="text" class="form-control" name="user-input"></center>
+				<br>
+				<center><input type="button" class="btn btn-success" onclick="submit()" value="Submit"></center>
+				<br>
+				
+				<center><h3>Here are few examples:</h3></center>
+				<br>
+
+				<input type=button class="btn btn-info" value="dog" onClick="submit()">
+				<input type=button class="btn btn-info" value="cat" onClick="submit()">
+				<input type=button class="btn btn-info" value="monkey" onClick="submit()">
+				<input type=button class="btn btn-info" value="hackathon" onClick="submit()">
+				<input type=button class="btn btn-info" value="hat" onClick="submit()">
+				<input type=button class="btn btn-info" value="bean" onClick="submit()">
+				<input type=button class="btn btn-info" value="swag" onClick="submit()">
+				<input type=button class="btn btn-info" value="meme" onClick="submit()">
+				<input type=button class="btn btn-info" value="robot" onClick="submit()">
+				<input type=button class="btn btn-info" value="water" onClick="submit()">
+				<input type=button class="btn btn-info" value="speaker" onClick="submit()">
+				<input type=button class="btn btn-info" value="greyhound" onClick="submit()">
+				<input type=button class="btn btn-info" value="penguin" onClick="submit()">
+				<input type=button class="btn btn-info" value="hippo" onClick="submit()">
+				<input type=button class="btn btn-info" value="horse" onClick="submit()">
+				<input type=button class="btn btn-info" value="lobster" onClick="submit()">
+				<input type=button class="btn btn-info" value="lion" onClick="submit()">
+				<input type=button class="btn btn-info" value="kangaroo" onClick="submit()">
+				<input type=button class="btn btn-info" value="kitten" onClick="submit()">
+				<input type=button class="btn btn-info" value="octopus" onClick="submit()">
+		</form>
+
+	</div>
+
+	<script>
+			function submit() {
+				document.getElementById("keyword").submit();
+			}
+			</script>
+
+	<center><div id="my_camera"></div></center>
+	
+	<!-- First, include the Webcam.js JavaScript Library -->
+	<script type="text/javascript" src="js/webcam.min.js"></script>
+
+
+	
+	<!-- Configure a few settings and attach camera -->
+	<script language="JavaScript">
+		Webcam.set({
+			width: 720,
+			height: 480,
+			image_format: 'jpeg',
+			jpeg_quality: 95
+		});
+		Webcam.attach( '#my_camera' );
+	</script>
+	
+	<!-- A button for taking snaps -->
+	<form>
+		<center><input type=button class="btn btn-primary" value="Take Snapshot" onClick="take_snapshot()"></center>
+	</form>
+
+
+	<!-- History Option-->
+
+	<center><div id="results">Your captured image will appear here...</div></center>
+	
+	<!-- Code to handle taking the snapshot and displaying it locally -->
+	<script language="JavaScript">
+		function take_snapshot() {
+			// take snapshot and get image data
+			Webcam.snap( function(data_uri) {
+				// display results in page
+				document.getElementById('results').innerHTML = 
+					'<h2>Image 1:</h2>' + 
+					'<img src="'+data_uri+'"/>';
+			} );
+		}
+	</script>
+  
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

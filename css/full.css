@@ -1,0 +1,29 @@
+/*!
+ * Start Bootstrap - Full (https://startbootstrap.com/template-overviews/full)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full/blob/master/LICENSE)
+ */
+
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+
+
+}
+
+#my_camera{
+
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #17a2b8;
+  padding: 10px;
+}
